@@ -1,0 +1,131 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", "sans-serif";
+}
+
+.header {
+  background-image: linear-gradient(to right, #d16ba5, #c761b0, #b75bbc, #a058ca, #7e58d9, #666ce9, #457ff6, #008fff, #00afff, #00ccff, #00e5fd, #5ffbf1);
+  padding: 19px 15px;
+  min-height: 70px;
+}
+
+.logo {
+  color: #fff;
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1170px;
+  width: 100%;
+  color: #fff;
+  font-family: "Roboto";
+  margin: 0 auto;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+}
+
+.nav-menu a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding-bottom: 5px;
+  border-bottom: 1px solid transparent;
+  transition: 0.5s;
+}
+.nav-menu a:hover, .nav-menu a:active, .nav-menu a.active {
+  border-bottom: 1px solid #fff;
+}
+
+.burger {
+  display: none;
+  cursor: pointer;
+}
+
+.burger div {
+  width: 30px;
+  height: 3px;
+  margin: 5px;
+  background: #fff;
+  transition: all 0.5s ease-in;
+}
+
+.burger.active .line1 {
+  transform: rotate(45deg) translate(5px, 6px);
+}
+
+.burger.active .line2 {
+  opacity: 0;
+}
+
+.burger.active .line3 {
+  transform: rotate(-45deg) translate(5px, -6px);
+}
+
+@media screen and (max-width: 1024px) {
+  .nav-menu {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 70px;
+    right: -100%;
+    width: 50%;
+    background-image: linear-gradient(to right top, #d16ba5, #c761b0, #b75bbc, #a058ca, #7e58d9, #666ce9, #457ff6, #008fff, #00afff, #00ccff, #00e5fd, #5ffbf1);
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: calc(100vh - 70px);
+    transition: right 0.5s ease-in;
+  }
+
+  .nav-menu li {
+    opacity: 0;
+  }
+
+  .nav-menu.active {
+    right: 0;
+    width: 50%;
+  }
+}
+@keyframes navLinksFade {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) translateX(0);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
